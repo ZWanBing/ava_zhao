@@ -43,11 +43,11 @@ categories:
 
 除了以上概念外，由于分子对接实际上是**分子间相互作用力**的体现，故而还需要知道一些生物化学、 物理的基础概念。
 
-范德华相互作用：又名凡得瓦力、范德瓦耳斯力，在化学中指分子或原子之间非定向的、无饱和性的、较弱的相互作用力，根据荷兰物理学家约翰内斯·范德瓦耳斯命名。 范德华力是一种电性引力，但它比化学键或共价键弱得多，通常其能量小於5kJ/mol。 范德华力的大小和分子的大小成正比。
+范德华相互作用：在化学中指分子或原子之间非定向的、无饱和性的、较弱的相互作用力，范德华力是一种电性引力，但它比化学键或共价键弱得多。 范德华力的大小和分子的大小成正比。
 
-静电相互作用：静电作用（electrostatic interaction）是化学键--离子键形成的本质，它包括静电引力和静电斥力，离子键是原子得失电子后生成的阴阳离子之间靠静电作用而形成的化学键。 离子键的本质是静电作用。 由于静电引力没有方向性，阴阳离子之间的作用可在任何方向上，离子键没有方向性。
+静电相互作用：静电作用是化学键--离子键形成的本质，它包括静电引力和静电斥力。 由于静电引力没有方向性，阴阳离子之间的作用可在任何方向上，离子键没有方向性。
 
-自由能：**热力学自由能**（[英语](https://zh.wikipedia.org/wiki/英语)：**Thermodynamic free energy**）是指一个[热力学系统](https://zh.wikipedia.org/wiki/热力学系统)的能量中可以用来对外做[功](https://zh.wikipedia.org/wiki/功)的部分，是热力学[态函数](https://zh.wikipedia.org/wiki/态函数)。自由能可以作为一个[热力学过程](https://zh.wikipedia.org/wiki/热力学过程)能否自发进行的判据。自由能的变化决定了两个分子是否能够结合以及结合的强度,一般认为自由能最小的构象存在的概率最高。
+自由能：**热力学自由能**是指一个[热力学系统](https://zh.wikipedia.org/wiki/热力学系统)的能量中可以用来对外做[功](https://zh.wikipedia.org/wiki/功)的部分。自由能可以作为一个[热力学过程](https://zh.wikipedia.org/wiki/热力学过程)能否自发进行的判据。自由能的变化决定了两个分子是否能够结合以及结合的强度,一般认为自由能最小的构象存在的概率最高。
 
 ## 简明流程
 
@@ -102,12 +102,10 @@ categories:
 
 1.[分子对接简明教程 – BioEngX](http://www.bioengx.com/molecular-docking-tutorial/)
 
-2.[AutoDock实例教程 纽普生物 (novopro.cn)](https://www.novopro.cn/articles/201712271167.html)
+2.[Rosetta@home - 维基百科，自由的百科全书 (wikipedia.org)](https://zh.wikipedia.org/wiki/Rosetta@home)
 
-3.[Rosetta@home - 维基百科，自由的百科全书 (wikipedia.org)](https://zh.wikipedia.org/wiki/Rosetta@home)
+3.[Schrödinger](https://www.schrodinger.com/)
 
-4.[Schrödinger](https://www.schrodinger.com/)
+4.[分子对接与虚拟筛选 - 豆丁网 (docin.com)](https://www.docin.com/p-2095138737.html)
 
-5.[分子对接与虚拟筛选 - 豆丁网 (docin.com)](https://www.docin.com/p-2095138737.html)
-
-6.[分子对接 - 维基百科，自由的百科全书 (wikipedia.org)](https://zh.wikipedia.org/wiki/分子对接)
+5.[分子对接 - 维基百科，自由的百科全书 (wikipedia.org)](https://zh.wikipedia.org/wiki/分子对接)
