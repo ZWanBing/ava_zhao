@@ -1,10 +1,9 @@
 ---
-author:
-  name: Ava Zhao
-categories:
-- Uncategorized
-date: "2022-03-02"
 title: 给linux小白的docker配置jbrowser2
+author: Ava Zhao
+date: "2022-03-02"
+categories:
+- 配置
 ---
 
 > 前提条件：假设我们只能在一台没有root权限，并且装了docker的linux服务器上配置jbrowse2

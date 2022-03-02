@@ -24,11 +24,11 @@ menu:
       url: /posts/
       weight: 1
     - name: Categories
-      url: /categories/
-      weight: 3
+      url: /Categories/
+      weight: 2
     - name: About
       url: /about
-      weight: 4
+      weight: 3
 params:
   author: Ava Zhao
   avatar: /images/me/avatar.jpeg
@@ -68,13 +68,10 @@ params:
       url: logo.png
       width: 127
     name: Ava Zhao
-  share:
-    Facebook: yes
-    Linkedin: yes
-    Twitter: yes
+  share: 
     copyright: This work is licensed under a Creative Commons Attribution-NonCommercial
       4.0 International License.
-  since: 2012
+  since: 2020
   social:
     Facebook: 
     GitHub: ZWanBing
@@ -92,7 +89,7 @@ params:
     enable: no
     language: en
     notify: no
-    placeholder: your comments ...
+    placeholder: 
     verify: no
     visitor: yes
   yandex_verification: ''
