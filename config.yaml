@@ -7,7 +7,6 @@ paginate: 12
 enableEmoji: yes
 enableRobotsTXT: yes
 googleAnalytics: ''
-disqusShortname: yourdiscussshortname
 sitemap:
   changefreq: monthly
   filename: sitemap.xml
