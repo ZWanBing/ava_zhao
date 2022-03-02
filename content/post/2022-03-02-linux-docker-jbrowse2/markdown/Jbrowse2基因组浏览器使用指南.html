@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Jbrowse2基因组浏览器使用指南</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+
+
+* {
+  color:#3e3e3e;
+}
+  
+p{
+  letter-spacing: 1px !important;
+  line-height: 1.7 !important;
+  min-height: 1em !important;
+  box-sizing: border-box !important;
+  word-wrap: break-word !important;
+  text-align: justify;
+  margin: 20px 0 !important;
+}
+
+blockquote {
+    border-left: 10px solid rgba(128,128,128,0.075);
+    background-color: rgba(128,128,128,0.05);
+    padding: 13px 15px !important;
+    margin: 0px;
+}
+
+blockquote p {
+  color: #898989;
+  margin: 0px;
+}
+
+strong {
+    font-weight: normal;
+    color: #FD5B03;
+}
+
+body {
+  font-size: 15px;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  word-wrap: break-word;
+  padding: 12px 13px;
+  font-size: 13px;
+  color: #898989;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    word-break: break-all !important;
+    margin: 20px 0;
+    line-height: 1.2;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+h1 {
+    border-left: 6px solid #71BA51 !important;
+    font-size: 20px !important;
+}
+
+h2 {
+    border-left: 4px solid #71BA51 !important;
+    font-size: 18px !important;
+}
+
+h3 {
+    border-left: 4px solid #71BA51 !important;
+    font-size: 16px !important;
+}
+
+h4 {
+    border-left: 4px solid #71BA51 !important;
+    font-size: 15px !important;
+}
+
+a {
+  color: #4183C4 !important;
+  text-decoration: none !important;
+}
+
+ul, ol {
+  padding-left: 30px;
+}
+
+li {
+  line-height: 24px;
+}
+
+hr {
+    height: 4px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #71BA51;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+    border-bottom: 1px solid #ddd;
+}
+
+pre {
+ background: #f2f2f2 !important;
+ padding: 12px 13px;
+}
+
+code {
+  color: #a71d5d;
+}
+
+
+
+
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h1><a name="jbrowse2基因组浏览器使用指南一）" class="md-header-anchor"></a><span>Jbrowse2基因组浏览器使用指南（一）</span></h1><blockquote><p><span>原文地址：</span><a href='https://jbrowse.org/jb2/docs/user_guide' target='_blank' class='url'>https://jbrowse.org/jb2/docs/user_guide</a></p></blockquote><p><span>之前已经推送了jbrowse2的安装配置，本文将详细介绍JBrowse2的使用，如果自己的服务器尚未配置安装JBrowse2，可以用JBrowse2官网给的demo。</span></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#jbrowse2基因组浏览器使用指南一）">Jbrowse2基因组浏览器使用指南（一）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n7"><a class="md-toc-inner" href="#用户界面概览">用户界面概览</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n10"><a class="md-toc-inner" href="#线性基因组视图">线性基因组视图</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n26"><a class="md-toc-inner" href="#添加track">添加track</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n51"><a class="md-toc-inner" href="#分享工作窗口">分享工作窗口</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n55"><a class="md-toc-inner" href="#编辑track配置">编辑track配置</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n57"><a class="md-toc-inner" href="#比对track参数设置">比对track参数设置</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n58"><a class="md-toc-inner" href="#堆积视图">堆积视图</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n59"><a class="md-toc-inner" href="#覆盖度视图">覆盖度视图</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n60"><a class="md-toc-inner" href="#显示soft-clipping">显示soft clipping</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n61"><a class="md-toc-inner" href="#reads排序">reads排序</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n62"><a class="md-toc-inner" href="#显示中心线">显示中心线</a></span></p></div><hr /><h2><a name="用户界面概览" class="md-header-anchor"></a><span>用户界面概览</span></h2><p><span>在浏览器中打开自己配置好的jbrowse网页后，会看到下面这样的界面（或者查看官方的demo:</span><a href='https://s3.amazonaws.com/jbrowse.org/code/jb2/master/index.html' target='_blank' class='url'>https://s3.amazonaws.com/jbrowse.org/code/jb2/master/index.html</a><span>)，我们常用的就是比对结果的线性视图，所以点击中间的</span><span style="color:#71BA51;"><span>Linear Genome View</span></span><span>打开一个新工作窗口。</span></p><p><img src="https://gitee.com/Ava_Zhao/gallery/raw/master/20201119113208.png" referrerpolicy="no-referrer" alt="image-20201119113208382"></p><h3><a name="线性基因组视图" class="md-header-anchor"></a><span>线性基因组视图</span></h3><p><span>在LGV（Linear Genome View）视图中可以像IGV中一样，在搜索框中输入位置，回车即可定位到想要查看的位置，如：</span><code>chr1:1-100</code><span>或 </span><code>chr1:1..100</code><span>，但是目前还不支持按照基因名称搜索。</span></p><ol start='' ><li><p><span>左右拖拽</span></p><p><span>类似于IGV，在jbrowse中可以鼠标左键按住后拖拽视图，查看周围的序列和reads。</span></p></li><li><p><span>缩放</span></p><p><span>如图中红框，在LGV顶部有缩放按钮和滑条：</span></p><p><img src="https://gitee.com/Ava_Zhao/gallery/raw/master/20201119163013.png" referrerpolicy="no-referrer" alt="image-20201119163013784"></p><p><span>除此之外，也可以使用</span><code>Ctrl</code><span>+</span><code>鼠标滚轮</code><span>的方式放大缩小视图。</span></p></li><li><p><span>窗口重排</span></p><p><span>在每一个track窗口的左上角有一个圆角矩形标签：</span></p><p><img src="https://gitee.com/Ava_Zhao/gallery/raw/master/20201119163346.png" referrerpolicy="no-referrer" alt="image-20201119163346247"></p><p><span>点击左侧的六个小点既可以拖拽重排track。</span></p></li></ol><h2><a name="添加track" class="md-header-anchor"></a><span>添加track</span></h2><p><span>jbrowse目前不支持直接在浏览器中打开本地文件，只能通过服务器后台命令行配置、admin server和URL的方式添加新的track，通过URL添加的方式如下：</span></p><p><span>页面左上角菜单栏中，点击File-&gt;Open Track</span></p><p><img src="https://gitee.com/Ava_Zhao/gallery/raw/master/20201119164348.png" referrerpolicy="no-referrer" alt="image-20201119164348308"></p><p><span>页面右侧出现添加track表单，另外，通过select tracks按钮也可以打开这个界面，select tracks-&gt;+</span></p><p><img src="https://gitee.com/Ava_Zhao/gallery/raw/master/20201119164716.png" referrerpolicy="no-referrer" alt="image-20201119164656980"><span>                      </span><img src="https://gitee.com/Ava_Zhao/gallery/raw/master/20201119164835.png" referrerpolicy="no-referrer" alt="image-20201119164835841"></p><p><span>通过添加指向文件的URL，既可以加载到目前的jbrowse窗口中，目前支持的文件类型有：</span></p><ul><li><span>Tabixed VCF</span></li><li><span>Tabixed BED</span></li><li><span>Tabixed GFF</span></li><li><span>BAM</span></li><li><span>CRAM</span></li><li><span>BigWig</span></li><li><span>BigBed</span></li><li><span>.hic file (Juicebox)</span></li></ul><p><span>对于tabix文件，允许使用TBI或CSI索引。BAM允许使用CSI或BAI。CRAM仅允许CRAI。对于BAI或TBI索引文件，会推测它的文件名为filename+&#39;.bai&#39;，但是如果与此不同，请确保明确指定索引文件。</span></p><h3><a name="分享工作窗口" class="md-header-anchor"></a><span>分享工作窗口</span></h3><p><span>在jbrowse页面顶部中央，可以更改当前工作窗口的名字，也可以生成一个分享链接：</span></p><p><img src="https://gitee.com/Ava_Zhao/gallery/raw/master/20201119172106.png" referrerpolicy="no-referrer" alt="image-20201119172106579"></p><p><span>分享该链接可以打开</span><span style='color:'><span>完全一样</span></span><span>的窗口内容。但最好不要直接从地址栏复制粘贴分享页面，请不要这么做。</span></p><h3><a name="编辑track配置" class="md-header-anchor"></a><span>编辑track配置</span></h3><p><span>太简单了不打算翻译了请查看英文文档！</span></p><h2><a name="比对track参数设置" class="md-header-anchor"></a><span>比对track参数设置</span></h2><h3><a name="堆积视图" class="md-header-anchor"></a><span>堆积视图</span></h3><p><span>太简单了不打算翻译了请查看英文文档！</span></p><h3><a name="覆盖度视图" class="md-header-anchor"></a><span>覆盖度视图</span></h3><p><span>太简单了不打算翻译了请查看英文文档！</span></p><h3><a name="显示soft-clipping" class="md-header-anchor"></a><span>显示soft clipping</span></h3><p><span>太简单了不打算翻译了请查看英文文档！</span></p><h3><a name="reads排序" class="md-header-anchor"></a><span>reads排序</span></h3><p><span>太简单了不打算翻译了请查看英文文档！</span></p><h3><a name="显示中心线" class="md-header-anchor"></a><span>显示中心线</span></h3><p><span>太简单了不打算翻译了请查看英文文档！</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+</body>
+</html>

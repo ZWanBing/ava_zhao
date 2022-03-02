@@ -21,7 +21,7 @@ Permalinks:
 menu:
   main:
     - name: Blog
-      url: /posts/
+      url: /post/
       weight: 1
     - name: Categories
       url: /categories/
