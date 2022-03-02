@@ -5,5 +5,7 @@ date: "2022-03-02"
 title: About
 ---
 
-QAQ
+
+It's so difficult for me to make this website.QAQ
+
 

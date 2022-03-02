@@ -30,7 +30,7 @@ menu:
       url: /about
       weight: 4
 params:
-  author: Fastbyte01
+  author: Ava Zhao
   avatar: /images/me/avatar.jpeg
   baidu_verification: ''
   bing_verification: ''
@@ -67,7 +67,7 @@ params:
       height: 40
       url: logo.png
       width: 127
-    name: Fastbyte01
+    name: Ava Zhao
   share:
     Facebook: yes
     Linkedin: yes
@@ -76,10 +76,10 @@ params:
       4.0 International License.
   since: 2012
   social:
-    Facebook: xxxx
-    GitHub: xxxx
-    Linkedin: xxxx
-    Twitter: xxxx
+    Facebook: 
+    GitHub: ZWanBing
+    Linkedin: 宛冰-赵-5396671aa
+    Twitter: 
   socialShare: yes
   subtitle: 随便写写
   utterances:
@@ -97,4 +97,4 @@ params:
     visitor: yes
   yandex_verification: ''
 author:
-  name: Fastbyte01
+  name: Ava Zhao
