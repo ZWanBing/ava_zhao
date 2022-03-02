@@ -8,7 +8,7 @@ categories:
 
 ## g
 
-# This is for tiantian❤.
+# This is for tiantian❤
 
 ## 概念介绍
 
