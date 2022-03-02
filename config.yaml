@@ -1,6 +1,6 @@
 baseURL: https://ava-zhao.netlify.app/
-languageCode: zh-CN
-defaultContentLanguage: zh-CN
+languageCode: en
+defaultContentLanguage: en
 title: Ava Zhao
 theme: KeepIt
 paginate: 12
