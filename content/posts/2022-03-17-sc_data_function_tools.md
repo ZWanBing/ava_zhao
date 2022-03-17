@@ -29,7 +29,7 @@ categories:
 
 - 10X mtx：一个文件夹中包含如下三个文件
 
-  <img src="https://gitee.com/Ava_Zhao/gallery/raw/master/image-20220317193740573.png" alt="image-20220317193740573" style="zoom: 80%;" />
+  <img src="https://gitee.com/Ava_Zhao/gallery/raw/master/image-20220317193740573.png" alt="image-20220317193740573"  />
 
 - 10X h5：10x-Genomics-formatted hdf5 file
 
