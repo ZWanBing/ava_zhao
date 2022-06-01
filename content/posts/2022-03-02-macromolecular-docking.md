@@ -14,18 +14,18 @@ categories:
 >
 >结果：分子对接（属于虚拟筛选）在各类创新药百花齐放的当下，成为各大药厂研发大分子、小分子药物的前置必要步骤。
 
-![Snipaste_2022-03-02_17-25-20](https://gitee.com/Ava_Zhao/gallery/raw/master/Snipaste_2022-03-02_17-25-20.png)
+![Snipaste_2022-06-01_15-58-46](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/Snipaste_2022-06-01_15-58-46.jpg)
 
 虚拟筛选
 
 
 ## 概念介绍
 
-![image-20220302173921992](https://gitee.com/Ava_Zhao/gallery/raw/master/image-20220302173921992.png)
+![image-20220302173921992](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/image-20220302173921992.png)
 
 分子对接：是[分子模拟](https://zh.wikipedia.org/wiki/分子模擬)的重要方法之一，其本质是两个或多个分子之间的[识别](https://zh.wikipedia.org/wiki/分子识别)过程，其过程涉及分子之间的**空间匹配**和**能量匹配**，其目的是找到分子间的**最佳匹配模式及其结合强度**。
 
-![Snipaste_2022-03-02_17-55-20](https://gitee.com/Ava_Zhao/gallery/raw/master/Snipaste_2022-03-02_17-55-20.png)
+![Snipaste_2022-03-02_17-55-20](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/Snipaste_2022-03-02_17-55-20.png)
 
 **注：但是实际上这个理论已经经过了更新，目前较被认可的是在钥匙-锁理论基础上，也存在诱导-契合现象：配体和受体在对接过程中会由于相互适应而产生构象的变化，因为分子是柔性的，其所包含的原子间键长键角可以改变。**
 
@@ -51,7 +51,7 @@ categories:
 
 ## 简明流程
 
-![image-20220302231257807](https://gitee.com/Ava_Zhao/gallery/raw/master/image-20220302231257807.png)
+![image-20220302231257807](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/image-20220302231257807.png)
 
 通过以上步骤，大部分候选分子就被剔除了，形成一个大小合适进行后续生物活性筛选的分子库，节约大量时间与成本。
 
@@ -59,7 +59,7 @@ categories:
 
 空间匹配是分子间发生相互作用的基础，能量匹配是分子间保持稳定结合的基础。
 
-![image-20220303193931648](https://gitee.com/Ava_Zhao/gallery/raw/master/image-20220303193931648.png)
+![image-20220303193931648](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/image-20220303193931648.png)
 
 ### 空间构象搜索算法
 
@@ -85,7 +85,7 @@ categories:
 - 分子力场
 - 知识统计打分函数
 
-![image-20220302232811279](https://gitee.com/Ava_Zhao/gallery/raw/master/image-20220302232811279.png)
+![image-20220302232811279](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/image-20220302232811279.png)
 
 目前分子对接领域已出现很多新的算法应用于构象搜索或能量评估，如[人工神经网络](https://zh.wikipedia.org/wiki/人工神经网络)等。构象搜索与能量评估的算法并不是独立于彼此的，可能同时估算并优化了这两方面的因素。
 
@@ -95,7 +95,7 @@ categories:
 
   把拉马克遗传算法和局部搜索结合在一起，遗传算法用于全局搜索，而局部搜索用于能量优化。为了加快计算速度，采用格点计算。首先在受体活性氨基酸附近划定一个长方体区域作为搜索空间，扫描不同类型的原子计算格点能量，在搜索空间内，调整配体的构象、位置和方向，进而评分、排序获得能量最低的构象作为输出结果。
 
-  ![Snipaste_2022-03-03_20-05-26](https://gitee.com/Ava_Zhao/gallery/raw/master/Snipaste_2022-03-03_20-05-26.png)
+  ![Snipaste_2022-03-03_20-05-26](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/Snipaste_2022-03-03_20-05-26.png)
 
 - Dock
 
@@ -113,9 +113,9 @@ categories:
 
 ### 非典（SARS冠状病毒）药物开发
 
-![image-20220302224552906](https://gitee.com/Ava_Zhao/gallery/raw/master/image-20220302224552906.png)
+![image-20220302224552906](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/image-20220302224552906.png)
 
-![image-20220302224627896](https://gitee.com/Ava_Zhao/gallery/raw/master/image-20220302224627896.png)
+![image-20220302224627896](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/image-20220302224627896.png)
 
 #### 参考链接
 
