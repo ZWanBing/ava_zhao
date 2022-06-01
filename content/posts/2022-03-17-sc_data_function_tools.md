@@ -29,7 +29,7 @@ categories:
 
 - 10X mtx：一个文件夹中包含如下三个文件
 
-  <img src="https://gitee.com/Ava_Zhao/gallery/raw/master/image-20220317193740573.png" alt="image-20220317193740573"  />
+  ![image](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/image.png)
 
 - 10X h5：10x-Genomics-formatted hdf5 file
 
@@ -65,7 +65,7 @@ categories:
 
 ## seurat功能导图
 
-![image-20220317204251678](https://gitee.com/Ava_Zhao/gallery/raw/master/image-20220317204251678.png)
+![img](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/image-20220317204251678.png)
 
 https://gitmind.cn/app/doc/8226615223 持续更新中
 

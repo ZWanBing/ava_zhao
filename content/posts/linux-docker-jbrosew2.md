@@ -10,7 +10,7 @@ categories:
 
 ##### 1.我比较熟悉centos系统，所以首先拉取一个docker centos镜像下来：
 
-![img](https://gitee.com/Ava_Zhao/gallery/raw/master/clipboard.png)
+![img](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/clipboard.png)
 
 ```shell
 docker search centos #搜索镜像 
@@ -35,7 +35,7 @@ docker run -itd --name jbrowse2 -v /data2:/data2 -p 8080:80 docker.io/centos
 docker exec -it jbrowse2 bash
 ```
 
-![img](https://gitee.com/Ava_Zhao/gallery/raw/master/20201118133432.png)
+![img](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/20201118133432.png)
 
 b.安装nginx
 
@@ -44,24 +44,24 @@ yum install nginx
 ps -ef|grep nginx  #没有启动nginx时不会看到nginx的进程
 ```
 
-![img](https://gitee.com/Ava_Zhao/gallery/raw/master/jb2.png)
+![img](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/jb2.png)
 
 ```shell
 nginx 
 ps -ef|grep nginx  #再次运行该命令看到nginx的进程
 ```
 
-![img](https://gitee.com/Ava_Zhao/gallery/raw/master/jb3.png)
+![img](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/jb3.png)
 
 > 注1：在docker中进入容器本身就是root用户，单独一个`nginx`命令就可以打开服务，因为可执行文件路径已经加载到环境变量中；但是如果找不到nginx命令，可以`cd /usr/sbin/ && ./nginx`，在centos中nginx可执行文件默认放在这里，cd进入此文件夹然后打开nginx服务
 >
 > 注2：有一些centos安装nginx的教程给的是`systemctl enable nginx`然后`systemctl start nginx`打开nginx服务，在docker中这是不行的，原因见下图
 
-![img](https://gitee.com/Ava_Zhao/gallery/raw/master/jb4.png)
+![jb](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/jb.png)
 
 在看到ngnix的进程后，可以在浏览器中查看nginx欢迎页面，输入地址：host-IP:port，其中host-IP就是你的服务器的内网或外网IP地址，port是容器映射的端口，本次配置中是将容器的80端口映射到宿主机的8080端口（见前文），例如我的10.0.1.4:8080打开后看到如下界面：
 
-![img](https://gitee.com/Ava_Zhao/gallery/raw/master/jb5.png)
+![img](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/jb5.png)
 
 > 我的是内网的IP，外网的权限（防火墙？）应该是关着的，我没有权限打开。大家根据自己的情况修改就行了，比如云服务器的应该能用外网IP打开这个测试页面
 >
@@ -82,7 +82,7 @@ ln -s /data2/test/wbzhao/software/node-v14.15.0-linux-x64/bin/npx /usr/bin/
 
 因为下载的是预编译版本，不需要源码编译，但是需要把可执行文件路径加入环境变量中，后面三个ln命令把可执行文件的软连接指向`/usr/bin/`。查看node版本，确认node已经安装好了
 
-![img](https://gitee.com/Ava_Zhao/gallery/raw/master/jb6.png)
+![img](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/jb6.png)
 
 ##### 3.前期工作做好以后，就可以配置jbrowse2网页服务了：
 
@@ -92,7 +92,7 @@ ln -s /data2/test/wbzhao/software/node-v14.15.0-linux-x64/bin/npx /usr/bin/
 npm install -g @jbrowse/cli
 ```
 
-![img](https://gitee.com/Ava_Zhao/gallery/raw/master/jb7.png)
+![img](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/jb7.png)
 
 这时候jbrowse cli工具并没有加到环境变量中，所以要多做一步
 
@@ -100,7 +100,7 @@ npm install -g @jbrowse/cli
 ln -s /data2/test/wbzhao/software/node-v14.15.0-linux-x64/bin/jbrowse /usr/bin/
 ```
 
-![img](https://gitee.com/Ava_Zhao/gallery/raw/master/jb8.png)
+![img](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/jb8.png)
 
 然后cd到nginx放置web文件的地址，利用jbrowse cli下载jbrowse2到该文件夹
 
@@ -118,10 +118,10 @@ rm -rf jbrowse2/ #删除jbrowse2文件夹
 
 在我当前的情况下，直接刷新之前在浏览器中打开的host-IP:port（10.0.1.4:8080）就能看到jbrowse2了
 
-![img](https://gitee.com/Ava_Zhao/gallery/raw/master/jb9.png)
+![img](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/jb9.png)
 
 由于还没有配置参考基因组和比对文件，所以网页是这样的，点击Volvox sample data会看到如下界面
 
-![img](https://gitee.com/Ava_Zhao/gallery/raw/master/jb10.png)
+![img](https://cdn.jsdelivr.net/gh/ZWanBing/blogImage@main/img/jb10.png)
 
 **目前为止，我们的jbrowse2就可以正常工作了，后续添加配置自己的数据的工作可以参考jbrowse2官网的详细教程**[**https://jbrowse.org/jb2/docs/**](https://jbrowse.org/jb2/docs/)**，祝大家玩的开心~**
